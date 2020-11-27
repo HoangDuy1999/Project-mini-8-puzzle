@@ -1,0 +1,34 @@
+﻿<Window x:Class="_8_puzzle.you_win"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_8_puzzle"
+        mc:Ignorable="d"
+        Title="you_win" MinHeight="285" MaxHeight="285" Height="285" Width="450" MaxWidth="450" MinWidth="450" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Image>
+            <Image.Triggers>
+                <EventTrigger RoutedEvent="Loaded">
+                    <BeginStoryboard>
+                        <Storyboard RepeatBehavior="Forever">
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Source"
+                                                   Duration="0:0:2">
+                                <DiscreteObjectKeyFrame KeyTime="0:0:0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <BitmapImage  UriSource =".\img\mesii.jpg"  x:Name="anhgoc"/>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                                <DiscreteObjectKeyFrame KeyTime="0:0:1">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <BitmapImage UriSource=".\img\youwin.png"/>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Image.Triggers>
+        </Image>
+    </Grid>
+</Window>

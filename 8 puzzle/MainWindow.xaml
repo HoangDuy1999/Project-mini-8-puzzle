@@ -1,0 +1,53 @@
+﻿<Window x:Class="_8_puzzle.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_8_puzzle"
+        mc:Ignorable="d"
+        Icon="/img/8-puzzel.png"
+        Title="8 PUZZLE"  Height="725" MinHeight="725" MaxHeight="725" MinWidth="900" Width="900" MaxWidth="900" WindowStartupLocation="CenterScreen" Name="size_window" SizeChanged="Window_SizeChanged">
+    <Grid>
+        <ToolBarTray Background="#4267b2" Height="30" VerticalAlignment="Top" Name="Size_change_tool_bar">
+            <ToolBar Name="MyToolbar" Width="415" Height="30" Margin="-3,0,0,0" Background="#4267b2">
+                <!--New game-->
+                <Image Source="/img/daucong.png" Height="25" Margin="5, 0"/>
+                <Button Content="New game" Width="130" Height="30" FontSize="18" Padding="25, 0, 0, 0" Margin="-30" BorderThickness="0, 0, 1, 0" BorderBrush="White" Foreground="White" Name="New_game" Click="New_game_Click"/>
+                <!--Open-->
+                <Image Source="/img/open.png" Height="25"  Margin="35, 0, 0, 0"/>
+                <Button Content="Open" Name="Open" Width="90" Height="30" FontSize="18" Padding="25, 0, 0, 0" Margin="-30" BorderThickness="0, 0, 1, 0" BorderBrush="White" Foreground="White" Click="Open_Click"/>
+                <!--Save-->
+                <Image Source="/img/icon_save.png" Height="25"  Margin="35, 0, 0, 0"/>
+                <Button Content="Save" Name="Save" Width="85" Height="30" FontSize="18" Padding="25, 0, 0, 0" Margin="-30" BorderThickness="0, 0, 1, 0" BorderBrush="White" Foreground="White" Click="Save_Click"/>
+                <!--Help-->
+                <Image Source="/img/help.png" Height="28"  Margin="35, 0, 0, 0"/>
+                <Button Content="Help" Name="Help" Width="85" Height="30" FontSize="18" Padding="25, 0, 0, 0" Margin="-35"  Foreground="White" Click="Help_Click"/>
+            </ToolBar>
+        </ToolBarTray>
+        <TextBlock Name="background_right"  Background="#e9ebee" VerticalAlignment="Top" HorizontalAlignment="Right" Width="453" Margin="0, 30, 0, 0"/>
+        <!--Start-->
+        <Button Name="Start" Content="Start" Click="Start_Click" Style="{StaticResource PrimaryButton}" Width="0" Height="0"
+                VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0, 0, 150, 50" FontSize="25"/>
+        <!--End game-->
+        <Button Name="End_game" Content="End Game" Click="End_game_Click" Style="{StaticResource PrimaryButton}" Width="0" Height="0"
+                VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0, 0, 150, 50" FontSize="25"/>
+        <!--Clock count down-->
+        <TextBlock Name="TBCountDown"  Width="0" Height="0" FontWeight="Bold" Background="AliceBlue" TextAlignment="Center" FontSize="35" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0, 0, 150, 100" Padding="0"/>
+        <!--Anh gốc nằm bên phải-->
+        <Image Name="Original_image" Width="400"  HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0, 55, 25, 0"/>
+        <Canvas Name="board" Width="450" HorizontalAlignment="Left" Margin="0, 55, 0, 0"
+                MouseLeftButtonDown="Board_MouseLeftButtonDown" MouseLeftButtonUp="Board_MouseLeftButtonUp" MouseMove="Board_MouseMove">
+            
+        </Canvas>
+        <Image Name="circle_center" Source="/img/circle_center.png" VerticalAlignment="Bottom" Width="0" HorizontalAlignment="Left" Margin="175, 0, 0, 66.5"/>
+        <Image Name="ARROW_UP" Source="/img/icon-len.png" Width="0" VerticalAlignment="Bottom" HorizontalAlignment="Left" 
+               Margin="175, 0, 0, 130" MouseLeftButtonDown="ARROW_UP_MouseLeftButtonDown" />
+        <Image Name="ARROW_DOWN" Source="/img/icon-xuong.png" Width="0" VerticalAlignment="Bottom" HorizontalAlignment="Left" 
+               Margin="175, 0, 0, 0"  MouseLeftButtonDown="ARROW_DOWN_MouseLeftButtonDown"/>
+        <Image Name="ARROW_LEFT" Source="/img/icon-trai.png" Width="0" VerticalAlignment="Bottom" HorizontalAlignment="Left" 
+               Margin="100, 0, 0, 60" MouseLeftButtonDown="ARROW_LEFT_MouseLeftButtonDown" />
+        <Image Name="ARROW_RIGHT" Source="/img/icon-phai.png" Width="0" VerticalAlignment="Bottom" HorizontalAlignment="Left" 
+               Margin="250, 0, 0, 60" MouseLeftButtonDown="ARROW_RIGHT_MouseLeftButtonDown" />
+        
+    </Grid>
+</Window>
